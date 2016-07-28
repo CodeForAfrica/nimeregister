@@ -193,7 +193,7 @@ menu-title: Home
 		var screen_name = $('.span6.tw_uname').val();
 		//src_img = "http://nimeregister.appspot.com/imgconv?img_url="+api_url_1 + screen_name + api_url_2;
 		console.log(src_img)
-		src_img = "http://nimeregister.on.co.ke/imgconvt.php?username=" + screen_name;
+		src_img = "http://52.51.171.135:8000/api/1/get_profile_picture?source=twitter&username=" + screen_name;
 		console.log(src_img)
 		$.ajax({
 		
@@ -219,7 +219,7 @@ menu-title: Home
 		document.getElementById("src_image").src = "img/ajax-100.gif";
 		var screen_name = $('.span6.fb_uname').val();
 		//src_img = "http://nimeregister.appspot.com/imgconv?img_url="+api_url_1 + screen_name + api_url_2;
-		src_img = "http://nimeregister.on.co.ke/imgconv.php?username=" + screen_name;
+		src_img = "http://52.51.171.135:8000/api/1/get_profile_picture?source=facebook&username=" + screen_name;
 		
 		$.ajax({
 		
@@ -244,7 +244,7 @@ menu-title: Home
 	function get_gravatar() {
 		document.getElementById("src_image").src = "img/ajax-100.gif";
 		var screen_name = $('.span6.gr_uname').val();
-		src_img = "http://nimeregister.on.co.ke/imgconvg.php?email_add=" + screen_name;
+		src_img = "http://52.51.171.135:8000/api/1/get_profile_picture?source=gravatar&username=" + screen_name;
 		
 		$.ajax({
 		
