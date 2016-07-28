@@ -2,6 +2,7 @@ pygments: true
 auto: true
 
 port: 4001
+host: 0.0.0.0
 
 title: Nimeregister!
 url: http://nimeregister.co.ke

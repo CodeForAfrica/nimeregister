@@ -192,8 +192,9 @@ menu-title: Home
 		var api_url_2 = '?size=bigger"';
 		var screen_name = $('.span6.tw_uname').val();
 		//src_img = "http://nimeregister.appspot.com/imgconv?img_url="+api_url_1 + screen_name + api_url_2;
+		console.log(src_img)
 		src_img = "http://nimeregister.on.co.ke/imgconvt.php?username=" + screen_name;
-		
+		console.log(src_img)
 		$.ajax({
 		
 		    url : src_img,
@@ -203,7 +204,7 @@ menu-title: Home
 		        document.getElementById("src_image").src = src_img;
 		        wm_top_right();
 		    },
-		    error : function()
+		    error : function(data)
 		    {
 		        src_img = "/img/portraits/ex1.png";
 		        document.getElementById("src_image").src = src_img;
