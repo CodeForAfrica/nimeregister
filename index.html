@@ -32,9 +32,9 @@ menu-title: Home
 					<p style="margin-top: 20px;">
 					
 						<!-- Watermark Image -->
-						<img src="img/portraits/ex1.png" alt="" height="100px" width="100px" class="img-polaroid" id="src_image" style="margin: 5px 0;" />
+						<img src="img/portraits/ex1.png" alt="" height="100px" width="100px" class="img-polaroid" id="src_image" style="margin: 5px 0;" crossOrigin="Anonymous"/>
 						<i class="icon-arrow-right"></i>
-						<img src="img/portraits/ex1.png" alt="" height="auto" width="180px" class="img-polaroid watermark" id="wm_image" />
+						<img src="img/portraits/ex1.png" alt="" height="auto" width="180px" class="img-polaroid watermark" id="wm_image" crossOrigin="Anonymous"/>
 						
 					</p>
 					
@@ -199,7 +199,8 @@ menu-title: Home
 		    url : src_img,
 		    success : function(data)
 		    {
-		        src_img = "data:image/jpg;base64,"+data;
+		        //src_img = "data:image/jpeg;base64, "+(data).trim();
+		        src_img = data;
 		        document.getElementById("src_image").src = src_img;
 		        wm_top_right();
 		    },
@@ -225,7 +226,8 @@ menu-title: Home
 		    url : src_img,
 		    success : function(data)
 		    {
-		        src_img = "data:image/jpg;base64,"+data;
+		        //src_img = "data:image/jpg;base64,"+data;
+		        src_img = data;
 		        document.getElementById("src_image").src = src_img;
 		        wm_top_right();
 		    },
@@ -250,7 +252,8 @@ menu-title: Home
 		    url : src_img,
 		    success : function(data)
 		    {
-		        src_img = "data:image/jpg;base64,"+data;
+		        //src_img = "data:image/jpg;base64,"+data;
+		        src_img = data;
 		        document.getElementById("src_image").src = src_img;
 		        wm_top_left();
 		    },
