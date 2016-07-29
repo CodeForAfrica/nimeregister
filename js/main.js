@@ -11,29 +11,29 @@ function getTweets() {
 	
 	if (screenWidth > 767) {
 		count = 48;
-		tweets_url = 'http://search.twitter.com/search.json?q=nimeregister&rpp=48&include_entities=true&with_twitter_user_id=true&result_type=mixed';
+		tweets_url = 'https://nimeregister.codeforkenya.org/api/1/get_tweets?username=muthonieve&count=48';
 		img_width = '6.25%';
 	} else {
 		count = 20;
-		tweets_url = 'http://search.twitter.com/search.json?q=nimeregister&rpp=20&include_entities=true&with_twitter_user_id=true&result_type=mixed';
+		tweets_url = 'https://nimeregister.codeforkenya.org/api/1/get_tweets?username=muthonieve&count=20';
 		img_width = '10%';
 	}
 	
 	$.ajax({
 	
 	    url : tweets_url,
-	    dataType : 'jsonp',
+	    dataType : 'json',
 	    success : function(data)
 	    
 	    {
-	    	if (data['results'].length < count){
-	    		count = data['results'].length;
+	    	if (data.length < count){
+	    		count = data.length;
 	    	}
 	    	
 	        var to_tweetsid = '';
 	        for (var i = 0; i < count; i++) {
-	        	var img_url = data['results'][i]['profile_image_url'].replace("_normal","_bigger");
-	        	var tweet_txt = data['results'][i]['text'].replace("\"","&quot;");
+	        	var img_url = data[i]['user']['profile_image_url'].replace("_normal","_bigger");
+	        	var tweet_txt = data[i]['text'].replace("\"","&quot;");
 	        	to_tweetsid += '<img src="' + img_url + '" style="width:' + img_width + ';" ';
 	        	to_tweetsid += 'rel="tooltip" data-placement="bottom" data-original-title="'+ tweet_txt +'"/>';
 	        }
